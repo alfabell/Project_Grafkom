@@ -23,7 +23,7 @@ void initBaddies(int xMin, int xMax, int yMin, int yMax, int num){
 void setup(){
   size(1280, 720);
   img = loadImage("bg.png");
-  imgPlayer = loadImage("tikus.png"); // Load gambar tikus tanah
+  imgPlayer = loadImage("tikus.png");
   initBaddies(-100, width + 20, -250, -80, difficulty);
 }
 
@@ -66,4 +66,29 @@ void moveBaddies(){
   fill(0, 102, 153);
   text("Score: " + (int)score, 10, 60);
   textSize(50);
+}
+
+void drawPlayer(){
+  image(imgPlayer, playerXCor, playerYCor, playerWidth, playerHeight);
+}
+
+void mouseDragged(){
+  if(mouseX >= 0 && mouseX <= width - playerWidth + 1){
+    playerXCor = mouseX;
+  }
+  if(mouseY >= 590 && mouseY <= height - playerHeight){
+    playerYCor = mouseY;
+  }
+}
+
+void drawRestartButton(){
+  fill(0, 255, 0);
+  rect(width/2 - 100, height/2 - 25, 200, 50, 10);
+  
+  fill(0);
+  textSize(20);
+  textAlign(CENTER, CENTER);
+  text("Restart Permainan", width/2, height/2);
+  
+  textAlign(LEFT, BASELINE);
 }
