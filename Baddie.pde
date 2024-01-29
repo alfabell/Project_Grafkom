@@ -12,5 +12,13 @@ class Baddie{
     h = hVal;
   } 
   
+    public void drop(float speed){
+    yCor += speed;
+  }
+  
+  public void display(){
+    fill(0, 102, 0);
+    rect(xCor, yCor,w,h,5);
+  }
  
 }
