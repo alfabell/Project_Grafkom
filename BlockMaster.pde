@@ -92,3 +92,15 @@ void drawRestartButton(){
   
   textAlign(LEFT, BASELINE);
 }
+
+
+void mousePressed(){
+  if(isCollided && mouseX >= width/2 - 100 && mouseX <= width/2 + 100 &&
+     mouseY >= height/2 - 25 && mouseY <= height/2 + 25){
+    isCollided = false;
+    score = 0;
+    difficulty = 10;  // Set kesulitan kembali ke nilai awal
+    limit = 10;       // Set batasan kembali ke nilai awal
+    initBaddies(-100, width + 20, -250, -80, difficulty);
+  }
+}
