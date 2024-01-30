@@ -65,10 +65,10 @@ Block Master is a simple 2D game developed using the Processing programming envi
 
 ## Developers
 
-Salman Ramadan Syahputra (2207412031)<br/>
-Muhammad Alfabel (2207412048)<br/>
-Rafif Nuraydin (2207412051)<br/>
-muhammad dzaki alif (2207412046)<br/>
+- Salman Ramadan Syahputra (2207412031)
+- Muhammad Alfabel (2207412048)
+- Rafif Nuraydin (2207412051)
+- Muhammad dzaki alif (2207412046)
 
 ## License
 
