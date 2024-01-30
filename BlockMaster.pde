@@ -9,6 +9,7 @@ int limit = 10;
 float score = 0;
 Baddie[] baddies;
 boolean isCollided = false;
+boolean isButtonHovered = false;
 
 void initBaddies(int xMin, int xMax, int yMin, int yMax, int num){
   baddies = new Baddie[num];
@@ -40,7 +41,10 @@ void draw(){
     }
   } else {
     drawRestartButton();
-    text("Score: " + (int)score, 100, 100);
+    textSize(30);
+    fill(0, 102, 153);
+    float textWidthScore = textWidth("Score: " + (int)score);
+    text("Score: " + (int)score, width/2 - textWidthScore/2, height/2 + 80);
   }
 }
 
@@ -82,7 +86,11 @@ void mouseDragged(){
 }
 
 void drawRestartButton(){
-  fill(0, 255, 0);
+  if (isButtonHovered) {
+    fill(0, 255, 0);
+  } else {
+    fill(0, 255, 0, 150);
+  }
   rect(width/2 - 100, height/2 - 25, 200, 50, 10);
   
   fill(0);
@@ -91,8 +99,8 @@ void drawRestartButton(){
   text("Restart Permainan", width/2, height/2);
   
   textAlign(LEFT, BASELINE);
-}
 
+}
 
 void mousePressed(){
   if(isCollided && mouseX >= width/2 - 100 && mouseX <= width/2 + 100 &&
@@ -102,5 +110,14 @@ void mousePressed(){
     difficulty = 10;  // Set kesulitan kembali ke nilai awal
     limit = 10;       // Set batasan kembali ke nilai awal
     initBaddies(-100, width + 20, -250, -80, difficulty);
+  }
+}
+
+void mouseMoved() {
+  if (mouseX >= width/2 - 100 && mouseX <= width/2 + 100 &&
+     mouseY >= height/2 - 25 && mouseY <= height/2 + 25) {
+    isButtonHovered = true;
+  } else {
+    isButtonHovered = false;
   }
 }
