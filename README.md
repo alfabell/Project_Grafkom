@@ -36,7 +36,7 @@ Block Master is a simple 2D game developed using the Processing programming envi
   - Represented by an image (tikus.png).
   - Controlled by mouse movements.
 
-- **Enemies (Blocks)**
+- **Enemies (baddie)**
   - Appear randomly on the screen.
   - Move downwards, requiring the player to avoid collisions.
 
